@@ -13,22 +13,22 @@ const connectDatabase = () => {
         keepAlive: true,                // Keep connections alive
         keepAliveInitialDelay: 300000   // Keep alive delay of 5 minutes
     })
-    .then(() => {
-        console.log("Mongoose Connected");
-    })
-    .catch((error) => {
-        console.log("MongoDB connection error: " + error);
-        console.log("Retrying connection in 5 seconds...");
-        // Retry connection after 5 seconds
-        setTimeout(connectDatabase, 5000);
-    });
-    
+        .then(() => {
+            console.log("Mongoose Connected");
+        })
+        .catch((error) => {
+            console.log("MongoDB connection error: " + error);
+            console.log("Retrying connection in 5 seconds...");
+            // Retry connection after 5 seconds
+            setTimeout(connectDatabase, 5000);
+        });
+
     // Handle disconnection events and reconnect automatically
     mongoose.connection.on('disconnected', () => {
         console.log('MongoDB disconnected! Attempting to reconnect...');
         setTimeout(connectDatabase, 5000);
     });
-    
+
     mongoose.connection.on('error', (err) => {
         console.log('MongoDB connection error: ' + err);
         mongoose.disconnect();
