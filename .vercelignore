@@ -1,0 +1,13 @@
+node_modules
+frontend/node_modules
+tests
+coverage
+cypress
+.git
+.github
+*.md
+LICENSE
+Procfile
+coupon-test.html
+test-coupon.js
+logs
