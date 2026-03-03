@@ -1,0 +1,44 @@
+// Admin: Get all coupons
+export const ADMIN_COUPONS_REQUEST = 'ADMIN_COUPONS_REQUEST';
+export const ADMIN_COUPONS_SUCCESS = 'ADMIN_COUPONS_SUCCESS';
+export const ADMIN_COUPONS_FAIL = 'ADMIN_COUPONS_FAIL';
+
+// Admin: Create coupon
+export const NEW_COUPON_REQUEST = 'NEW_COUPON_REQUEST';
+export const NEW_COUPON_SUCCESS = 'NEW_COUPON_SUCCESS';
+export const NEW_COUPON_RESET = 'NEW_COUPON_RESET';
+export const NEW_COUPON_FAIL = 'NEW_COUPON_FAIL';
+
+// Admin: Get coupon details
+export const COUPON_DETAILS_REQUEST = 'COUPON_DETAILS_REQUEST';
+export const COUPON_DETAILS_SUCCESS = 'COUPON_DETAILS_SUCCESS';
+export const COUPON_DETAILS_FAIL = 'COUPON_DETAILS_FAIL';
+
+// Admin: Update coupon
+export const UPDATE_COUPON_REQUEST = 'UPDATE_COUPON_REQUEST';
+export const UPDATE_COUPON_SUCCESS = 'UPDATE_COUPON_SUCCESS';
+export const UPDATE_COUPON_RESET = 'UPDATE_COUPON_RESET';
+export const UPDATE_COUPON_FAIL = 'UPDATE_COUPON_FAIL';
+
+// Admin: Delete coupon
+export const DELETE_COUPON_REQUEST = 'DELETE_COUPON_REQUEST';
+export const DELETE_COUPON_SUCCESS = 'DELETE_COUPON_SUCCESS';
+export const DELETE_COUPON_RESET = 'DELETE_COUPON_RESET';
+export const DELETE_COUPON_FAIL = 'DELETE_COUPON_FAIL';
+
+// User: Apply coupon
+export const APPLY_COUPON_REQUEST = 'APPLY_COUPON_REQUEST';
+export const APPLY_COUPON_SUCCESS = 'APPLY_COUPON_SUCCESS';
+export const APPLY_COUPON_RESET = 'APPLY_COUPON_RESET';
+export const APPLY_COUPON_FAIL = 'APPLY_COUPON_FAIL';
+
+// User: Remove applied coupon
+export const REMOVE_COUPON = 'REMOVE_COUPON';
+
+// User: Redeem coupon after successful order
+export const REDEEM_COUPON_REQUEST = 'REDEEM_COUPON_REQUEST';
+export const REDEEM_COUPON_SUCCESS = 'REDEEM_COUPON_SUCCESS';
+export const REDEEM_COUPON_FAIL = 'REDEEM_COUPON_FAIL';
+
+// Clear errors
+export const CLEAR_ERRORS = 'CLEAR_ERRORS'; 

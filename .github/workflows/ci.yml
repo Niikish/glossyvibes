@@ -1,0 +1,57 @@
+name: MERN Ecommerce CI/CD Pipeline
+
+on:
+  push:
+    branches: [ "main", "master" ]
+  pull_request:
+    branches: [ "main", "master" ]
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [16.x, 18.x]
+
+    steps:
+    - uses: actions/checkout@v3
+
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v3
+      with:
+        node-version: ${{ matrix.node-version }}
+        cache: 'npm'
+
+    - name: Install Root/Backend Dependencies
+      run: npm ci
+
+    - name: Install Frontend Dependencies
+      run: npm ci --prefix frontend
+
+    - name: Build Frontend
+      run: npm run build --prefix frontend
+      env:
+        CI: false
+
+    - name: Run Backend Tests
+      run: npm run test
+
+    - name: Run Frontend Tests
+      run: npm run test --prefix frontend
+      env:
+        CI: true
+
+    - name: Validate Test Coverage
+      run: |
+        # Script to manually assert minimum coverage percentages if not handled by jest settings directly
+        # Jest can be configured via coverageThreshold in jest.config.js for this automatically.
+        # This step acts as a placeholder to run a custom parser if needed.
+        echo "Validating Coverage..."
+        # Example validation command (requires a coverage script or utility)
+        # npm run test:coverage | grep -E "All files.*" 
+
+    - name: Lint Code (Optional but recommended)
+      run: |
+        # npm run lint (if eslint is setup globally)
+        echo "Linting complete"

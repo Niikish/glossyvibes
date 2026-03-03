@@ -1,0 +1,56 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html,
+body {
+    background-color: #f1f3f6;
+    font-family: 'Roboto', sans-serif;
+    overflow-x: hidden;
+    position: relative;
+    width: 100%;
+}
+
+/* Fix for touch devices: Disable hover effects that stick on tap */
+@media (hover: none) {
+    .hover\:scale-105:hover {
+        transform: none !important;
+    }
+
+    .group:hover .group-hover\:scale-105 {
+        transform: none !important;
+    }
+}
+
+/* Responsive Table Wrapper */
+.responsive-table {
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+/* Custom categories dropdown arrow fix */
+.arrow_down {
+    border-left: 11px solid transparent;
+    border-right: 11px solid transparent;
+    border-bottom: 11px solid #fff;
+}
+
+/* Login/Signup sidebar bg */
+.loginSidebar {
+    background-image: url("https://static-assets-web.flixcart.com/www/linchpin/fk-cp-zion/img/login_img_c4a81e.png");
+    background-position: center 85%;
+    background-repeat: no-repeat;
+}
+
+/* Hide scrollbar cross-browser (used in horizontal category strips) */
+.no-scrollbar::-webkit-scrollbar {
+    display: none;
+}
+
+.no-scrollbar {
+    -ms-overflow-style: none;
+    /* IE and Edge */
+    scrollbar-width: none;
+    /* Firefox */
+}
